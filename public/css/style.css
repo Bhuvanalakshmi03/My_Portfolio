@@ -1,0 +1,282 @@
+*,
+*::before,
+*::after{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    overflow-x:hidden;
+}
+
+:root {
+    --bg-dark: #1f2933;
+    --bg-light: #2d3748;
+    --silver: #c0c0c0;
+    --text-light: #f5f5f5;
+    --accent: #6b7b8c;
+    --platinum: #E5E4E2;
+    --section-padding: 5rem;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--platinum);
+    font-family: sans-serif;
+    min-height: 100vh;
+}
+
+
+.sec-title {
+    font-size: clamp(2rem,4vw,3rem);
+    font-weight:700;
+    margin-bottom:3rem;
+    text-transform: uppercase;
+
+}
+
+#navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(31, 41, 51, 0.9) !important;
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(192, 192, 192, 0.2);
+}
+
+.navbar-brand {
+    color: var(--platinum) !important;
+    font-weight: 700;
+    letter-spacing: 2px;
+} 
+
+.nav-link {
+    color: var(--silver) !important;
+
+    margin: 0 5px;
+
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+}
+.nav-link:hover {
+    color: white !important;
+
+    background-color: rgba(91, 124, 153, 0.2);
+}
+.nav-pills .nav-link.active {
+    background-color: var(--accent) !important;
+
+    color: white !important;
+
+    box-shadow: 0 0 15px rgba(91, 124, 153, 0.4);
+}
+section, .page-section {
+    padding: var(--section-padding) 0;
+}
+
+/* Hero */
+.hero-title{
+    font-size: clamp(2.5rem, 6vw, 6rem);
+}
+
+.hero{
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0.45)
+        ),
+        url('https://images.unsplash.com/34/ddTzoX58Q153kjaitXl4_ny.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+}
+
+@media (max-width:768px){
+    .hero{
+        background-attachment:scroll;
+    }
+}
+
+/* About */
+.about-card{
+    transform: scale(.85);
+    opacity: .5;
+
+    transition:
+        transform .8s ease,
+        opacity .8s ease;
+
+    will-change: transform;
+}
+
+.about-card.active{
+    transform: scale(1);
+    opacity: 1;
+}
+.contact {
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ),
+        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100 dvh;
+}
+
+/* Skill Section */
+.skill-card{
+    background: var(--bg-light);
+
+    border-radius: 20px;
+
+    padding: 2rem;
+
+    height: 100%;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    transition: all .3s ease;
+}
+
+.skill-card:hover{
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 30px rgba(0,0,0,.25);
+
+    border-color: rgba(255,255,255,.15);
+}
+
+.skill-card h3{
+    color: var(--platinum);
+
+    font-weight: 600;
+}
+
+.skill-card p{
+    color: var(--silver);
+
+    line-height: 1.8;
+}
+
+.skill-icon{
+    font-size: 2rem;
+
+    color: var(--accent);
+
+    margin-bottom: 1rem;
+}
+
+.skill-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+    justify-content:center;
+}
+
+.skill-tags span{
+    background: rgba(255,255,255,.08);
+
+    padding:.4rem .8rem;
+
+    border-radius:50px;
+
+    font-size:.85rem;
+}
+
+.project-card{
+    background: var(--bg-light);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    transition: all .3s ease;
+}
+
+.project-card:hover{
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.25);
+}
+
+.project-card img{
+    width:100%;
+    height:250px;
+
+    object-fit:cover;
+}
+
+.project-content{
+    padding:1.5rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex-grow:1;
+}
+
+.project-content .btn{
+    margin-top:auto;
+}
+
+.project-card h3{
+    font-size:1.4rem;
+    font-weight:600;
+}
+
+.project-card p{
+    color:#c0c0c0;
+}
+
+.btn-outline-light{
+    border-radius:10px;
+}
+
+/* Parallax */
+.reveal{
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+
+    transform:translateY(0);
+}
