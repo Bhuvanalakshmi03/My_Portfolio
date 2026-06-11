@@ -8,10 +8,9 @@ app.set("view engine", "ejs");
 // Serve static files from the public folder
 app.use(express.static("public"));
 
-const projects = require("./data/project.js");
 // Route for home page
 app.get("/", (req, res) => {
-    res.render("pages/index", { projects});
+    res.render("pages/index");
 })
 
 app.listen(PORT, (error) =>{
